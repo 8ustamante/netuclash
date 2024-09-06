@@ -27,11 +27,7 @@ const router = createRouter({
       name: 'Aldea Principal', 
       component: () => import('../components/AldeaPrincipal.vue')
     },
-    {
-      path: '/prueba', 
-      name: 'prueba', 
-      component: () => import('../components/Prueba.vue')
-    },
+    
   ]
 })
 

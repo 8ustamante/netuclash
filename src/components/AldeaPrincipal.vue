@@ -1,8 +1,17 @@
 <template>
-    <BlankPage />
-    Hola
+  <div>
+    <Title titulo="¿Cual es tu ayuntamiento?"></Title>
+    <SliderAyunta />
+  </div>
 </template>
 
 <script>
-import BlankPage from '../components/BlankPage.vue';
+import SliderAyunta from "./SliderAyunta.vue";
+import Title from "./Title.vue";
+export default {
+  components: {
+    SliderAyunta,
+    Title
+  },
+};
 </script>
