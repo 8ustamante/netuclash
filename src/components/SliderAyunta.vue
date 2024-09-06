@@ -7,11 +7,11 @@
         <div ref="scrollContent" class="scroll-content">
           <div
             v-for="choza in aldeas"
-            :key="choza.id_choza"
+            :key="choza.id_chozas"
             class="card" style="background-color:#260A62;"
           >
             <RouterLink
-              :to="`/${choza.id_choza}`"
+              :to="`/${choza.id_chozas}`"
               class="stretched-link"
             >
               <img
@@ -31,6 +31,10 @@
 <script>
 import axios from 'axios';
 
+// Tu componente Vue.js
+
+import { getAldeasByTipo } from '../services/ServiceApi';
+
 export default {
   data() {
     return {
@@ -44,10 +48,8 @@ export default {
   methods: {
     async fetchAldeas() {
       try {
-        const response = await axios.get(
-          'https://raw.githubusercontent.com/8ustamante/pruebas_json/main/ths.json'
-        );
-        this.aldeas = response.data.chozas;
+        const aldeas = await getAldeasByTipo(1);  // Llamada a la función con el id_tipo_aldea = 1
+        this.aldeas = aldeas;  // Asigna los datos a la variable aldeas
       } catch (error) {
         console.error('Error fetching aldeas:', error);
       } finally {
@@ -62,6 +64,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style scoped>
