@@ -1,7 +1,4 @@
 export default {
-    common: [
-        { label: 'Home', url: '/', active: true },
-    ],
     admin: [
         { label: 'Administración', url: '/admin' },
     ],

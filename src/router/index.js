@@ -21,7 +21,12 @@ const router = createRouter({
       path: '/:pathMatch(.*)*', 
       name: 'NotFound', 
       component: () => import('../components/404.vue')
-    }
+    },
+    {
+      path: '/aldea-principal', 
+      name: 'Aldea Principal', 
+      component: () => import('../components/AldeaPrincipal.vue')
+    },
   ]
 })
 
