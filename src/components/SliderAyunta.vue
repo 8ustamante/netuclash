@@ -88,12 +88,13 @@ export default {
 .card {
   flex: 0 0 auto;
   margin: 5px;
-  width: 200px;
+  width: 180px;
 }
 
 .card img {
   max-width: 100%;
-  height: 150px;
+  height: 120px;
+  padding: 1rem;
   object-fit: cover;
 }
 
