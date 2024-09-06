@@ -1,3 +1,4 @@
+// Componente Vue
 <template>
   <div>
     <div v-if="loading">Cargando...</div>
@@ -5,20 +6,9 @@
       <div class="scroll-container">
         <button class="btn btn-primary scroll-button left" @click="scrollLeft">◀</button>
         <div ref="scrollContent" class="scroll-content">
-          <div
-            v-for="choza in aldeas"
-            :key="choza.id_chozas"
-            class="card" style="background-color:#260A62;"
-          >
-            <RouterLink
-              :to="`/${choza.id_chozas}`"
-              class="stretched-link"
-            >
-              <img
-                :src="choza.ths_img"
-                alt="Imagen del Ayuntamiento"
-                class="img-fluid mx-auto d-block"
-              />
+          <div v-for="choza in aldeas" :key="choza.id_chozas" class="card" style="background-color:#260A62;">
+            <RouterLink :to="`/${choza.id_chozas}`" class="stretched-link">
+              <img :src="choza.ths_img" alt="Imagen del Ayuntamiento" class="img-fluid mx-auto d-block" />
             </RouterLink>
           </div>
         </div>
@@ -29,11 +19,7 @@
 </template>
 
 <script>
-import axios from 'axios';
-
-// Tu componente Vue.js
-
-import { getAldeasByTipo } from '../services/ServiceApi';
+import { getAldeasByTipo } from '../services/ServiceApi'; // Importar el servicio
 
 export default {
   data() {
@@ -48,8 +34,8 @@ export default {
   methods: {
     async fetchAldeas() {
       try {
-        const aldeas = await getAldeasByTipo(1);  // Llamada a la función con el id_tipo_aldea = 1
-        this.aldeas = aldeas;  // Asigna los datos a la variable aldeas
+        const aldeas = await getAldeasByTipo(1);  // Llamar la API con el ID que necesitas
+        this.aldeas = aldeas;
       } catch (error) {
         console.error('Error fetching aldeas:', error);
       } finally {
@@ -64,8 +50,8 @@ export default {
     },
   },
 };
-
 </script>
+
 
 <style scoped>
 .scroll-container {
