@@ -8,7 +8,7 @@
           <div
             v-for="choza in aldeas"
             :key="choza.id_choza"
-            class="card"
+            class="card" style="background-color:#260A62;"
           >
             <RouterLink
               :to="`/${choza.id_choza}`"
@@ -93,7 +93,7 @@ export default {
 
 .card img {
   max-width: 100%;
-  height: 120px;
+  height: 100px;
   padding: 1rem;
   object-fit: cover;
 }

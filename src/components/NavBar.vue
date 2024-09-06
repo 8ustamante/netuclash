@@ -1,4 +1,5 @@
 <template>
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <!-- Brand -->
@@ -8,32 +9,37 @@
           <small class="text-light fs-6">Distribuciones para clash of clans</small>
         </div>
       </RouterLink>
-  
-      <!-- Toggler -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+      <!-- Toggler (hidden since dropdown is disabled) -->
+      <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-  
-      <!-- Navbar Links -->
-      <div class="collapse navbar-collapse" id="navbarNav">
+
+      <!-- Navbar Links (hidden) -->
+      <div class="collapse navbar-collapse d-none" id="navbarNav">
         <ul class="navbar-nav ms-auto align-items-center gap-2">
-          <!-- Search bar -->
-          <li class="nav-item py-3">
+          <!-- Search bar in navbar for md and larger screens -->
+          <li class="nav-item d-none d-md-block">
             <input type="search" class="form-control border-3 border-warning" placeholder="Buscar por #121, creador..." aria-label="Buscar">
           </li>
-  
+
           <!-- Publicar button -->
-          <!-- <li class="nav-item">
+          <!--
+          <li class="nav-item">
             <button type="button" class="btn btn-warning">Publicar aldea</button>
-          </li> -->
-  
+          </li>
+          -->
+
           <!-- Dynamic Links -->
-          <!-- <li class="nav-item" v-for="link in links" :key="link.url">
+          <!--
+          <li class="nav-item" v-for="link in links" :key="link.url">
             <a class="nav-link text-white px-3" :href="link.url" :class="{ active: link.active }" aria-current="page">{{ link.label }}</a>
-          </li> -->
-  
+          </li>
+          -->
+
           <!-- User Dropdown -->
-          <!-- <li class="nav-item dropdown">
+          <!--
+          <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle p-0" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
             </a>
@@ -44,14 +50,19 @@
               <li><a class="dropdown-item" href="#">Perfil</a></li>
               <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
             </ul>
-          </li> -->
+          </li>
+          -->
         </ul>
       </div>
     </div>
   </nav>
-  
-  
+
+  <!-- Search bar for screens smaller than md -->
+  <div class="container mt-1 mb-3 d-block d-lg-none">
+    <input type="search" class="form-control border-3 border-warning" placeholder="Buscar por #121, creador..." aria-label="Buscar">
+  </div>
 </template>
+
 
 <script>
 import navLinks from "../navLinks.js";

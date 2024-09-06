@@ -29,7 +29,7 @@
 import { defineComponent, markRaw, ref } from "vue";
 import SectionContainer from "../components/SectionContainer.vue";
 import DynamicComponent from "../components/DynamicComponent.vue";
-import BlankPage from "../components/BlankPage.vue";
+import AldeaConstructor from "../components/AldeaConstructor.vue";
 import AldeaPrincipal from "../components/AldeaPrincipal.vue";
 import LayoutGuest from "../layouts/LayoutGuest.vue";
 
@@ -37,7 +37,7 @@ export default defineComponent({
   components: {
     DynamicComponent,
     SectionContainer: markRaw(SectionContainer),
-    BlankPage: markRaw(BlankPage),
+    AldeaConstructor: markRaw(AldeaConstructor),
     AldeaPrincipal: markRaw(AldeaPrincipal),
     LayoutGuest
   },
@@ -47,10 +47,10 @@ export default defineComponent({
 
     const selectComponent = (componentName) => {
       const componentMap = {
-        BlankPage: BlankPage,
+        AldeaConstructor: AldeaConstructor,
         AldeaPrincipal: AldeaPrincipal,
       };
-      currentComponent.value = componentMap[componentName] || BlankPage;
+      currentComponent.value = componentMap[componentName] || AldeaConstructor;
       emit("component-selected", componentName);
     };
 
